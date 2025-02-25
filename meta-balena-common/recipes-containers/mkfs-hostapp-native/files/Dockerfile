@@ -1,10 +1,8 @@
-FROM debian:stretch
+FROM debian:trixie
 
 VOLUME /mnt/sysroot/inactive
 
-RUN apt-get update && apt-get install -y \
-	ca-certificates \
-	iptables
+RUN apt-get update && apt-get install -y ca-certificates iptables
 
 COPY create.* /usr/bin/
 
